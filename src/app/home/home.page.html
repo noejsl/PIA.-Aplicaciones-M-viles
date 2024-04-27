@@ -1,0 +1,21 @@
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
+    <aside class="side-menu">
+      <ul>
+        <li><a>Inicio</a></li>
+        <li><a href="/miperfil">Mi perfil</a></li>
+        <li><a>Buscar Libros</a></li>
+        <li><a>Mis Listas de Lecturas</a></li>
+        <li><a>Préstamos</a></li>
+        <li><a>Configuración</a></li>
+        <li><a>Ayuda y Soporte</a></li>
+        <li><a (click)="logout()">Cerrar Sesión</a></li>
+      </ul>
+    </aside>
+
+  <div id="container">
+    <ion-button (click)="logout()"> LOG OUT</ion-button>
+  </div>
+

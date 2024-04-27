@@ -1,0 +1,50 @@
+<ion-content [fullscreen]="true">
+ 
+
+ <div class="header">
+  <ion-title class="Title">Welcome Back</ion-title>
+  <p class="subTitle">Sign in to access your account</p>
+ </div>
+
+ <form [formGroup]="loginForm" >
+  <div class="ion-padding">
+    <ion-item>
+      <ion-input placeholder="username" class="input" formControlName = "email"></ion-input>
+      <ion-icon name="person-outline"></ion-icon>
+    </ion-item>
+
+    <div *ngIf="loginForm.controls?.['email'].touched && loginForm.controls?.['email'].invalid">
+      <ion-text  *ngIf = "errorControl.email.errors?.required">
+        Email is required
+      </ion-text>
+      <ion-text *ngIf = "errorControl.email.errors?.pattern">
+        Email should be valid
+      </ion-text>
+    </div>
+
+
+     <ion-item>
+      <ion-input placeholder="password" class="input" formControlName = "password"></ion-input>
+      <ion-icon name="lock-closed-outline"></ion-icon>
+    </ion-item>
+
+    <div *ngIf="loginForm.controls?.['password'].touched && loginForm.controls?.['password'].invalid">
+      <ion-text  *ngIf = "errorControl.password.errors?.required">
+        password is required
+      </ion-text>
+    </div>
+  </div>
+
+  <div class="signupLink">
+    <p>Nuevo Niembro?<a [routerLink] ="['/signup']" style="color:#FFC33F">Sign Up now</a></p>
+  </div>
+
+
+  <ion-fab vertical="bottom" horizontal="end" style="margin-bottom: 30px;">
+    <ion-fab-button (click)="login()">
+      <ion-icon name="chevron-forward"></ion-icon> 
+    </ion-fab-button>
+  </ion-fab>
+ </form>
+
+</ion-content>

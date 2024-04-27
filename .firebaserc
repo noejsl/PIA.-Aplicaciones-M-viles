@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "bookswap-34241": {
+      "hosting": {
+        "app": [
+          "bookswap-34241"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "bookswap-34241"
+  }
+}

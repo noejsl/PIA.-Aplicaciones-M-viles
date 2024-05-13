@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 
 const routes: Routes = [
   {
@@ -31,6 +33,24 @@ const routes: Routes = [
     path: 'miperfil',
     loadChildren: () => import('./pages/miperfil/miperfil.module').then( m => m.MiperfilPageModule)
   },
+  {
+    path: 'nuevo-libro',
+    loadChildren: () => import('./pages/nuevo-libro/nuevo-libro.module').then( m => m.NuevoLibroPageModule)
+  },
+  {
+    path: 'add-new-book',
+    loadChildren: () => import('./pages/add-new-book/add-new-book.module').then( m => m.AddNewBookPageModule)
+  },
+  {
+    path: 'updatebook',
+    loadChildren: () => import('./pages/updatebook/updatebook.module').then( m => m.UpdatebookPageModule)
+  },
+  {
+    path: 'comentarios',
+    loadChildren: () => import('./comentarios/comentarios.module').then( m => m.ComentariosPageModule)
+  },
+
+ 
 
 
 ];

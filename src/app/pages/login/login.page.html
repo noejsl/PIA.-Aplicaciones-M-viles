@@ -28,6 +28,10 @@
       <ion-icon name="lock-closed-outline"></ion-icon>
     </ion-item>
 
+    <div class="forgotpassword">
+      <a  [routerLink]="['/reset-password']"> Forgot password?</a>
+    </div>
+
     <div *ngIf="loginForm.controls?.['password'].touched && loginForm.controls?.['password'].invalid">
       <ion-text  *ngIf = "errorControl.password.errors?.required">
         password is required

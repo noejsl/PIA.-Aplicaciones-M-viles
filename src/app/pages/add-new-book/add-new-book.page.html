@@ -1,0 +1,54 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Add New Book</ion-title>
+    <ion-icon name="close" slot="end" size="large" class = "ion-padding"(click)="dismiss()"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+
+    <ion-item>
+      <ion-textarea [(ngModel)]="BookName" placeholder="Write the name of your book here"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Category</ion-label>
+      <ion-select [(ngModel)]="BookCategory" >
+        <ion-select-option values ="Narrative">Narrative</ion-select-option>
+        <ion-select-option values ="Fantasy">Fantasy</ion-select-option>
+        <ion-select-option values ="Self-help">Self-help</ion-select-option>
+        <ion-select-option values ="Science">Science</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Location: </ion-label>
+      <ion-input type="text" [(ngModel)]="BookLocation" placeholder="  Enter your location"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-textarea [(ngModel)]="BookDescription" placeholder="Write a description of your book here"></ion-textarea>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-icon name="calendar-outline" slot = "start"></ion-icon>
+      <ion-label>Initial Date:</ion-label>
+      <ion-datetime  [(ngModel)]="BookInitialdate" displayFormat="DD MMM YYYY H:mm"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="calendar-outline" slot = "start"></ion-icon>
+      <ion-label>Due Date:</ion-label>
+      <ion-datetime   [(ngModel)]="BookDuedate"  displayFormat="DD MMM YYYY H:mm"></ion-datetime>
+    </ion-item>
+
+    <ion-button class="ion-margin" expand ="block" (click)="add()">Add Book</ion-button>
+
+
+
+
+
+  </ion-card>
+</ion-content>

@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators, FormControl, FormsModule, ReactiveF
 import { Router } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
 import { AutheticationService } from 'src/app/authetication.service';
+import { FirebaseService } from 'src/app/firebase.service';
 
 
 @Component({
@@ -13,7 +14,12 @@ import { AutheticationService } from 'src/app/authetication.service';
 export class SignupPage implements OnInit {
   regForm:  FormGroup
 
-  constructor(public formBuilder:FormBuilder, public loadingCtrl: LoadingController, public authService: AutheticationService, public router: Router ) { }
+  constructor(public formBuilder:FormBuilder, 
+    public loadingCtrl: LoadingController, 
+    public authService: AutheticationService, 
+    public router: Router,
+    public firebase: FirebaseService 
+  ) { }
 
   ngOnInit() {
     this.regForm = this.formBuilder.group({
@@ -43,7 +49,20 @@ export class SignupPage implements OnInit {
         console.log(err)
         loading.dismiss();
      } )
-        
+
+     
+     const newUser = {
+      itemName:this.regForm.value.fullname, 
+      itemInterests: '', 
+      itemGmail:this.regForm.value.email,
+      itemLocation: '', 
+      itemDescripcion: '', 
+    };
+
+    // Agrega el usuario a Firebase
+    await this.firebase.agregarUsuario(newUser);
+   
+  
       
 
      if (user) {

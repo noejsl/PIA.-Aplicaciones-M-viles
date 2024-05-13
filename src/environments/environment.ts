@@ -5,13 +5,13 @@
 export const environment = {
   production: false,
   firebaseConfig : {
-    apiKey: "AIzaSyA0ChaQZ59x1YONWi-vdbse9wMjkmAZwG8",
-    authDomain: "bookswap-34241.firebaseapp.com",
-    projectId: "bookswap-34241",
-    storageBucket: "bookswap-34241.appspot.com",
-    messagingSenderId: "860205446815",
-    appId: "1:860205446815:web:00603e1ac1c1f7e9a494aa",
-    measurementId: "G-S9QMRMVT1F"
+    apiKey: "AIzaSyCLQZObxBAjKhGfHRmR3lGyJx67DtxxA_k",
+    authDomain: "pia-apps-moviles-af062.firebaseapp.com",
+    projectId: "pia-apps-moviles-af062",
+    storageBucket: "pia-apps-moviles-af062.appspot.com",
+    messagingSenderId: "834339326754",
+    appId: "1:834339326754:web:24cf658b924be988d8f37b",
+    measurementId: "G-9LYFKQC7HJ"
   }
 };
 

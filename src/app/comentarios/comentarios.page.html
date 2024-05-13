@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Comentarios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Comentarios</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- Espacio para escribir y enviar comentarios -->
+  <ion-footer>
+    <ion-toolbar>
+      <ion-input placeholder="Escribe un comentario" [(ngModel)]="newMessage"></ion-input>
+      <ion-buttons slot="end">
+        <ion-button (click)="agregarComentario()" [disabled]="!newMessage || newMessage.trim().length === 0">Enviar</ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-footer>
+
+  <!-- Mostrar comentarios -->
+  <ion-list>
+    <ion-item *ngFor="let comment of Comments">
+      <ion-avatar slot="start">
+        <ion-icon name="person"></ion-icon> <!-- Icono de usuario -->
+      </ion-avatar>
+      <ion-label>
+        <h2>{{ comment.itemSender }}</h2>
+        <p>{{ comment.itemComment }}</p>
+        <p>{{ comment.itemDate | date:'dd/MM/yyyy HH:mm' }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
